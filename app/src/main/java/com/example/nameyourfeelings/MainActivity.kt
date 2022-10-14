@@ -16,24 +16,78 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        etName = findViewById(R.id.et_name)
+
         button.setOnClickListener(this)
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
+
+
+
     }
 
     override fun onClick(view: View) {
-        when (view.id) {
-            R.id.button -> if (etName.text.isEmpty()) {
+            /*if (view.id == R.id.button) {
+                if (etName.text.isEmpty()) {
+                    Toast.makeText(
+                        applicationContext,
+                        "Harap isi nama terlebih dahulu",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
                 Toast.makeText(
-                    applicationContext,
-                    "Harap isi nama terlebih dahulu",
+                    this@MainActivity,
+                    "Hi " + etName.text + "!" + "You Are Happy",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else {
-                Toast.makeText(this@MainActivity, "Hi "+etName.text+"!"+"You Are Happy", Toast.LENGTH_SHORT).show()
+            }*/
+
+            when (view.id) {
+                R.id.button -> {
+                    if (etName.text.isEmpty()) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "How would I know you? Please input your name first",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Hi " + etName.text + " ! " + "Glad to know that you are happy ^^",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                R.id.button2 -> {
+                    if (etName.text.isEmpty()) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "How would I know you? Please input your name first",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Hi " + etName.text + " ! " + "We know that you are sad, but calm down. It's not the end of the world :)",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                R.id.button3 -> {
+                    if (etName.text.isEmpty()) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "How would I know you? Please input your name first",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Hi " + etName.text + " ! " + "Why you are mad? Everybody do make mistakes at some points. Forgive, and let go :) ",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
             }
-            R.id.button2 -> Toast.makeText(this@MainActivity, "You Are Sad", Toast.LENGTH_SHORT).show()
-            R.id.button3 -> Toast.makeText(this@MainActivity, "You Are Mad", Toast.LENGTH_SHORT).show()
         }
-    }
 }
